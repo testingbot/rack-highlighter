@@ -26,6 +26,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'coderay',     '~> 1.0'
   gem.add_development_dependency 'pygments.rb', '~> 0.3'
+  gem.add_development_dependency 'rouge',       '~> 0.3'
   gem.add_development_dependency 'ultraviolet', '~> 1.0'
 
   gem.add_development_dependency 'rake'

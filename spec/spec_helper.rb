@@ -4,6 +4,7 @@ require 'rack/test'
 
 require 'coderay'
 require 'pygments'
+require 'rouge'
 require 'uv'
 
 require File.expand_path('../../lib/rack/highlighter', __FILE__)

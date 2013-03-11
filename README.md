@@ -1,6 +1,6 @@
 # Rack::Highlighter [![Build Status](https://secure.travis-ci.org/unindented/rack-highlighter.png)](http://travis-ci.org/unindented/rack-highlighter)
 
-Rack Middleware that provides syntax highlighting of code blocks, using the [CodeRay](http://rubygems.org/gems/coderay), [Pygments](http://rubygems.org/gems/pygments.rb) or [Ultraviolet](http://rubygems.org/gems/ultraviolet) gems.
+Rack Middleware that provides syntax highlighting of code blocks, using the [CodeRay](http://rubygems.org/gems/coderay), [Pygments](http://rubygems.org/gems/pygments.rb), [Rouge](https://rubygems.org/gems/rouge) or [Ultraviolet](http://rubygems.org/gems/ultraviolet) gems.
 
 
 ## Installation
@@ -86,6 +86,15 @@ require 'rack/highlighter'
 require 'pygments'
 
 use Rack::Highlighter, :pygments
+```
+
+### Rouge
+
+```ruby
+require 'rack/highlighter'
+require 'rouge'
+
+use Rack::Highlighter, :rouge
 ```
 
 ### Ultraviolet

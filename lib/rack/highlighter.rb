@@ -89,6 +89,12 @@ module Rack
       Pygments.highlight(code, formatter: 'html', lexer: lang, options: options)
     end
 
+    def rouge(lang, code, options)
+      lexer = Rouge::Lexer.find_fancy(lang, code) || Rouge::Lexers::Text
+      formatter = Rouge::Formatters::HTML.new(options)
+      formatter.format(lexer.lex(code))
+    end
+
     def ultraviolet(lang, code, options)
       Uv.parse(code, 'xhtml', lang, options[:lines], options[:theme])
     end

@@ -3,6 +3,7 @@ require File.expand_path('../spec_helper', __FILE__)
 HIGHLIGHTERS = [
   :coderay,
   :pygments,
+  :rouge,
   :ultraviolet
 ]
 
