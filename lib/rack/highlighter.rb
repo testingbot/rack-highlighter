@@ -20,7 +20,7 @@ module Rack
     def initialize(app, highlighter, opts = {})
       @app = app
       @highlighter = highlighter
-      @coder = HTMLEntities.new
+      @coder = ::HTMLEntities.new
       @opts = DEFAULT_OPTS.merge(opts)
     end
 
@@ -31,7 +31,7 @@ module Rack
       if should_highlight?(status, headers)
         content = extract_content(response)
 
-        doc = Nokogiri::HTML(content)
+        doc = ::Nokogiri::HTML(content)
         search_for_nodes(doc).each { |node| highlight_node(node) }
         content = doc.to_html
 
@@ -82,21 +82,21 @@ module Rack
     end
 
     def coderay(lang, code, options)
-      CodeRay.scan(code, lang).div(options)
+      ::CodeRay.scan(code, lang).div(options)
     end
 
     def pygments(lang, code, options)
-      Pygments.highlight(code, formatter: 'html', lexer: lang, options: options)
+      ::Pygments.highlight(code, formatter: 'html', lexer: lang, options: options)
     end
 
     def rouge(lang, code, options)
-      lexer = Rouge::Lexer.find_fancy(lang, code) || Rouge::Lexers::Text
-      formatter = Rouge::Formatters::HTML.new(options)
+      lexer = ::Rouge::Lexer.find_fancy(lang, code) || ::Rouge::Lexers::Text
+      formatter = ::Rouge::Formatters::HTML.new(options)
       formatter.format(lexer.lex(code))
     end
 
     def ultraviolet(lang, code, options)
-      Uv.parse(code, 'xhtml', lang, options[:lines], options[:theme])
+      ::Uv.parse(code, 'xhtml', lang, options[:lines], options[:theme])
     end
 
   end
