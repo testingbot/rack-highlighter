@@ -42,7 +42,7 @@ EXAMPLES = [
 describe Rack::Highlighter do
 
   let(:app) do
-    create_app(status, headers, content, highlighter, options)
+    create_app(status, headers, content, highlighter, opts)
   end
 
   before do
@@ -60,7 +60,7 @@ describe Rack::Highlighter do
     end
 
     let(:content) { 'foobar' }
-    let(:options) { {} }
+    let(:opts) { {} }
 
     HIGHLIGHTERS.each do |lib|
 
@@ -106,7 +106,7 @@ describe Rack::Highlighter do
           content:   '(1..10).reduce(&:+)'
         })
       end
-      let(:options) { {} }
+      let(:opts) { {} }
 
       HIGHLIGHTERS.each do |lib|
 
@@ -137,7 +137,7 @@ describe Rack::Highlighter do
       describe "with a code block wrapped in `#{example[:elements].join(' > ')} #{example[:attribute]}=\"#{example[:value]}\"`" do
 
         let(:content) { generate_example(example) }
-        let(:options) { example }
+        let(:opts) { example }
 
         HIGHLIGHTERS.each do |lib|
 

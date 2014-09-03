@@ -24,9 +24,9 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'nokogiri',     '>= 1.4.0'
   gem.add_runtime_dependency 'htmlentities', '>= 4.0.0'
 
-  gem.add_development_dependency 'coderay',     '~> 1.0'
-  gem.add_development_dependency 'pygments.rb', '~> 0.5'
-  gem.add_development_dependency 'rouge',       '~> 0.3'
+  gem.add_development_dependency 'coderay',     '~> 1.1'
+  gem.add_development_dependency 'pygments.rb', '~> 0.6'
+  gem.add_development_dependency 'rouge',       '~> 1.6'
   gem.add_development_dependency 'ultraviolet', '~> 1.0'
 
   gem.add_development_dependency 'rake'
