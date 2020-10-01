@@ -35,7 +35,7 @@ module Rack
         search_for_nodes(doc).each { |node| highlight_node(node) }
         content = doc.to_html
 
-        headers['content-length'] = bytesize(content).to_s
+        headers['content-length'] = content.bytesize.to_s
         response = [content]
       end
 
