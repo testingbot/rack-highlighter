@@ -91,7 +91,7 @@ module Rack
 
     def rouge(lang, code, options)
       lexer = ::Rouge::Lexer.find_fancy(lang, code) || ::Rouge::Lexers::Text
-      formatter = ::Rouge::Formatters::HTMLPygments.new(options)
+      formatter = ::Rouge::Formatters::HTMLPygments.new(::Rouge::Formatters::HTML.new, options)
       formatter.format(lexer.lex(code))
     end
 
